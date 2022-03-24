@@ -1,0 +1,64 @@
+basePath: /
+definitions:
+  models.UriResponse:
+    properties:
+      deepLink:
+        type: string
+      link:
+        type: string
+    type: object
+host: localhost:8000
+info:
+  contact:
+    email: frtatmaca@gmail.com
+    name: Firat Atmaca
+    url: frtatmaca
+  description: Simple swagger implementation in Go HTTP
+  title: Go Restful API with Swagger
+  version: "1.0"
+paths:
+  /deeplinktourl:
+    post:
+      consumes:
+      - application/json
+      description: Deep Link To Url
+      parameters:
+      - description: Link Converter Input
+        in: body
+        name: DeepLinkToUrl
+        required: true
+        schema:
+          $ref: '#/definitions/models.UriResponse'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.UriResponse'
+      summary: Deep Link To Url
+      tags:
+      - deeplinktourl
+  /urltodeeplink:
+    post:
+      consumes:
+      - application/json
+      description: Deep Link To Url
+      parameters:
+      - description: Link Converter Input
+        in: body
+        name: UrlToDeepLink
+        required: true
+        schema:
+          $ref: '#/definitions/models.UriResponse'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.UriResponse'
+      summary: Url To Deep Link
+      tags:
+      - urltodeeplink
+swagger: "2.0"

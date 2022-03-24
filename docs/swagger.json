@@ -1,0 +1,98 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Simple swagger implementation in Go HTTP",
+        "title": "Go Restful API with Swagger",
+        "contact": {
+            "name": "Firat Atmaca",
+            "url": "frtatmaca",
+            "email": "frtatmaca@gmail.com"
+        },
+        "version": "1.0"
+    },
+    "host": "localhost:8000",
+    "basePath": "/",
+    "paths": {
+        "/deeplinktourl": {
+            "post": {
+                "description": "Deep Link To Url",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "deeplinktourl"
+                ],
+                "summary": "Deep Link To Url",
+                "parameters": [
+                    {
+                        "description": "Link Converter Input",
+                        "name": "DeepLinkToUrl",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.UriResponse"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.UriResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/urltodeeplink": {
+            "post": {
+                "description": "Deep Link To Url",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "urltodeeplink"
+                ],
+                "summary": "Url To Deep Link",
+                "parameters": [
+                    {
+                        "description": "Link Converter Input",
+                        "name": "UrlToDeepLink",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.UriResponse"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.UriResponse"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "models.UriResponse": {
+            "type": "object",
+            "properties": {
+                "deepLink": {
+                    "type": "string"
+                },
+                "link": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
