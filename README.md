@@ -3,8 +3,6 @@ Deep Link
 
 ## About
 
-This project is a challenge for Trendyol.
-
 Simply, i designed and coded deeplink creator in the project.
 
 Besides, our database(MySql) is also stored to links request in order not to lose the data.
